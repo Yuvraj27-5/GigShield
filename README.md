@@ -620,16 +620,6 @@ For workers reluctant to download a new app, a WhatsApp-based interface will all
 
 ---
 
-## 👥 Team
-
-| Name | Role | Responsibilities |
-|------|------|-----------------|
-| [Member 1] | AI/ML Engineer | Premium model, fraud detection, risk forecasting, model deployment |
-| [Member 2] | Backend Engineer | FastAPI server, PostgreSQL, trigger engine, API integrations |
-| [Member 3] | Frontend Engineer | React Native mobile app, admin web dashboard |
-| [Member 4] | Product & Research | Persona research, business model, documentation, demo video |
-
----
 
 ## 📎 Resources & Links
 
