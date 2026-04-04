@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GigShield — Income Insurance for Gig Workers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <div class="splash-inner">
+    <div class="logo-mark">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+        <path d="M26 4L6 14V28C6 38.5 14.8 48.2 26 50C37.2 48.2 46 38.5 46 28V14L26 4Z" fill="url(#sg)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <path d="M18 26L23 31L34 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs>
+          <linearGradient id="sg" x1="6" y1="4" x2="46" y2="50" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6EE7B7"/>
+            <stop offset="1" stop-color="#3B82F6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1 class="splash-title">GigShield</h1>
+    <p class="splash-sub">Income Insurance for Gig Workers</p>
+    <div class="splash-loader"><div></div></div>
+  </div>
+</div>
+
+<!-- APP ROOT -->
+<div id="app" class="hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-brand">
+      <svg width="28" height="28" viewBox="0 0 52 52" fill="none">
+        <path d="M26 4L6 14V28C6 38.5 14.8 48.2 26 50C37.2 48.2 46 38.5 46 28V14L26 4Z" fill="url(#sgn)" />
+        <path d="M18 26L23 31L34 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="sgn" x1="6" y1="4" x2="46" y2="50" gradientUnits="userSpaceOnUse"><stop stop-color="#6EE7B7"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs>
+      </svg>
+      <span>GigShield</span>
+    </div>
+    <div class="nav-links" id="navLinks"></div>
+    <div class="nav-actions" id="navActions"></div>
+  </nav>
+
+  <!-- PAGES -->
+  <main id="main">
+
+    <!-- HOME PAGE -->
+    <section id="page-home" class="page active">
+      <div class="hero">
+        <div class="hero-badge"><span class="pulse-dot"></span> Live Coverage Active</div>
+        <h1 class="hero-title">Your Income.<br><span class="grad-text">Always Protected.</span></h1>
+        <p class="hero-desc">Parametric insurance that pays automatically when rain, heat waves, or civic events stop you from earning — no claims, no paperwork.</p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="showPage('login')">Get Covered Today</button>
+          <button class="btn-ghost" onclick="showPage('how')">How it Works</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-pill"><span class="stat-num" id="hsWorkers">12,400+</span><span>Workers Protected</span></div>
+          <div class="stat-pill"><span class="stat-num">₹2.4Cr+</span><span>Paid Out</span></div>
+          <div class="stat-pill"><span class="stat-num">4min</span><span>Avg Payout Time</span></div>
+        </div>
+      </div>
+
+      <div class="triggers-ticker" id="triggersTicker">
+        <div class="ticker-label">⚡ LIVE TRIGGERS</div>
+        <div class="ticker-track" id="tickerTrack">Loading live events...</div>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feat-icon rain">🌧️</div>
+          <h3>Heavy Rain</h3>
+          <p>Triggered when rainfall exceeds 20mm/hr — automatically detected via IMD + OpenWeather</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon heat">🌡️</div>
+          <h3>Extreme Heat</h3>
+          <p>Activates above 40°C — protecting your earnings during dangerous heatwaves</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon aqi">😷</div>
+          <h3>Poor Air Quality</h3>
+          <p>AQI above 300 triggers payout — safeguarding you from hazardous outdoor conditions</p>
+        </div>
+        <div class="feature-card">
+          <div class="feat-icon bandh">🚫</div>
+          <h3>Bandh / Curfew</h3>
+          <p>Civic events, strikes, and curfews validated through 3 independent sources</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="page-how" class="page">
+      <div class="page-header">
+        <h2>How <span class="grad-text">GigShield</span> Works</h2>
+        <p>Three simple steps — fully automated, no manual claims</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-num">01</div><h3>Sign Up & KYC</h3><p>Verify your Aadhaar last 4 digits and link your UPI ID. Takes under 2 minutes.</p></div>
+        <div class="step-card"><div class="step-num">02</div><h3>Choose Your Plan</h3><p>Pick Basic (₹49/wk), Standard (₹99/wk), or Premium (₹149/wk) based on your coverage needs.</p></div>
+        <div class="step-card"><div class="step-num">03</div><h3>Earn & Relax</h3><p>Our AI monitors weather + civic events 24/7. When a trigger fires, payout hits your UPI automatically.</p></div>
+      </div>
+      <div class="tech-section">
+        <h3>The 3-Layer Validation Engine</h3>
+        <div class="layers">
+          <div class="layer-card"><div class="layer-icon">🌐</div><strong>Event Detection</strong><p>IMD, OpenWeather, CPCB + social signals</p></div>
+          <div class="layer-arrow">→</div>
+          <div class="layer-card"><div class="layer-icon">📍</div><strong>Worker Activity</strong><p>GPS + order history confirms active shift</p></div>
+          <div class="layer-arrow">→</div>
+          <div class="layer-card"><div class="layer-icon">🤖</div><strong>Fraud Engine</strong><p>4-layer AI fraud scoring before release</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGIN PAGE -->
+    <section id="page-login" class="page">
+      <div class="auth-container">
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabWorker" onclick="switchTab('worker')">Worker Login</button>
+          <button class="auth-tab" id="tabAdmin" onclick="switchTab('admin')">Admin Login</button>
+        </div>
+
+        <!-- Worker Login -->
+        <div id="workerLogin">
+          <div id="otpStep1">
+            <h2>Welcome Back</h2>
+            <p class="auth-sub">Enter your mobile number to receive OTP</p>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <div class="input-row">
+                <span class="input-prefix">+91</span>
+                <input type="tel" id="mobileInput" placeholder="9876543210" maxlength="10" />
+              </div>
+            </div>
+            <button class="btn-primary full" onclick="sendOTP()">Send OTP</button>
+            <p class="auth-note">New worker? OTP will auto-register you</p>
+          </div>
+          <div id="otpStep2" class="hidden">
+            <h2>Enter OTP</h2>
+            <p class="auth-sub">6-digit OTP sent to <span id="otpMobile"></span></p>
+            <div class="form-group">
+              <label>OTP</label>
+              <input type="text" id="otpInput" placeholder="- - - - - -" maxlength="6" class="otp-input" />
+            </div>
+            <div id="otpHint" class="otp-hint hidden"></div>
+            <button class="btn-primary full" onclick="verifyOTP()">Verify & Login</button>
+            <button class="btn-ghost full" onclick="goBack('otpStep1','otpStep2')">← Change Number</button>
+          </div>
+        </div>
+
+        <!-- Admin Login -->
+        <div id="adminLogin" class="hidden">
+          <h2>Admin Login</h2>
+          <p class="auth-sub">Access the GigShield control panel</p>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="adminEmail" placeholder="admin@gigshield.in" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="adminPassword" placeholder="••••••••••" />
+          </div>
+          <button class="btn-primary full" onclick="adminLogin()">Login as Admin</button>
+          <p class="auth-note">Demo: admin@gigshield.in / GigAdmin@2024</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONBOARDING / KYC -->
+    <section id="page-onboard" class="page">
+      <div class="auth-container wide">
+        <h2>Complete Your Profile</h2>
+        <p class="auth-sub">Required for policy activation</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="onboardName" placeholder="Ravi Kumar" />
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <select id="onboardCity">
+              <option>Mumbai</option><option>Delhi</option><option>Bangalore</option><option>Chennai</option><option>Hyderabad</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Platform</label>
+            <select id="onboardPlatform">
+              <option>Swiggy</option><option>Zomato</option><option>Dunzo</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Aadhaar Last 4 Digits</label>
+            <input type="text" id="onboardAadhaar" placeholder="XXXX" maxlength="4" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>UPI ID</label>
+          <input type="text" id="onboardUpi" placeholder="yourname@upi" />
+        </div>
+        <button class="btn-primary full" onclick="submitKYC()">Verify & Continue</button>
+      </div>
+    </section>
+
+    <!-- PLAN SELECTION -->
+    <section id="page-plans" class="page">
+      <div class="page-header">
+        <h2>Choose Your <span class="grad-text">Coverage Plan</span></h2>
+        <p>Weekly auto-renewal — cancel anytime</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card" data-tier="basic">
+          <div class="plan-badge">Starter</div>
+          <h3>Basic</h3>
+          <div class="plan-price">₹49<span>/week</span></div>
+          <div class="plan-payout">Up to ₹500/week</div>
+          <ul class="plan-features">
+            <li>✓ Rain trigger (>20mm/hr)</li>
+            <li>✓ Bandh/Strike coverage</li>
+            <li>✓ UPI auto-payout</li>
+            <li>✗ Heat & AQI triggers</li>
+          </ul>
+          <button class="btn-plan" onclick="selectPlan('basic')">Choose Basic</button>
+        </div>
+        <div class="plan-card popular" data-tier="standard">
+          <div class="plan-badge popular-badge">Most Popular</div>
+          <h3>Standard</h3>
+          <div class="plan-price">₹99<span>/week</span></div>
+          <div class="plan-payout">Up to ₹1,000/week</div>
+          <ul class="plan-features">
+            <li>✓ Rain trigger (>20mm/hr)</li>
+            <li>✓ Extreme Heat (>40°C)</li>
+            <li>✓ Poor AQI (>300)</li>
+            <li>✓ Bandh/Strike coverage</li>
+          </ul>
+          <button class="btn-plan popular-btn" onclick="selectPlan('standard')">Choose Standard</button>
+        </div>
+        <div class="plan-card" data-tier="premium">
+          <div class="plan-badge">Full Cover</div>
+          <h3>Premium</h3>
+          <div class="plan-price">₹149<span>/week</span></div>
+          <div class="plan-payout">Up to ₹1,500/week</div>
+          <ul class="plan-features">
+            <li>✓ All Standard triggers</li>
+            <li>✓ Flood warning</li>
+            <li>✓ Curfew coverage</li>
+            <li>✓ Priority payout</li>
+          </ul>
+          <button class="btn-plan" onclick="selectPlan('premium')">Choose Premium</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKER DASHBOARD -->
+    <section id="page-dashboard" class="page">
+      <div class="dash-header">
+        <div>
+          <h2>Good <span id="greeting"></span>, <span id="dashName" class="grad-text"></span></h2>
+          <p class="dash-sub" id="dashCity"></p>
+        </div>
+        <div class="dash-actions">
+          <button class="btn-sm" onclick="simulateTrigger()">⚡ Simulate Trigger</button>
+          <button class="btn-sm outline" onclick="loadDashboard()">↻ Refresh</button>
+        </div>
+      </div>
+
+      <div class="dash-cards">
+        <div class="dash-card accent">
+          <div class="dc-label">Policy Status</div>
+          <div class="dc-value" id="dcPolicy">—</div>
+          <div class="dc-sub" id="dcTier">No active plan</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-label">Total Received</div>
+          <div class="dc-value" id="dcReceived">₹0</div>
+          <div class="dc-sub" id="dcClaims">0 claims</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-label">Active Triggers</div>
+          <div class="dc-value" id="dcTriggers">0</div>
+          <div class="dc-sub" id="dcCity">in your city</div>
+        </div>
+        <div class="dash-card">
+          <div class="dc-label">Max Weekly Payout</div>
+          <div class="dc-value" id="dcMaxPayout">₹0</div>
+          <div class="dc-sub">current plan</div>
+        </div>
+      </div>
+
+      <!-- 7-Day Forecast Chart -->
+      <div class="chart-section">
+        <h3>7-Day Risk Forecast <span class="badge-ai">AI Powered</span></h3>
+        <div class="chart-wrap">
+          <canvas id="forecastChart" height="180"></canvas>
+        </div>
+      </div>
+
+      <!-- Active Triggers -->
+      <div class="section-block">
+        <h3>Live Trigger Events</h3>
+        <div id="liveTriggersList" class="triggers-list">
+          <div class="skeleton-row"></div><div class="skeleton-row"></div>
+        </div>
+      </div>
+
+      <!-- Payout History -->
+      <div class="section-block">
+        <h3>Payout History</h3>
+        <div id="payoutHistoryList" class="payout-list">
+          <div class="skeleton-row"></div><div class="skeleton-row"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN DASHBOARD -->
+    <section id="page-admin" class="page">
+      <div class="dash-header">
+        <div>
+          <h2>Admin <span class="grad-text">Control Panel</span></h2>
+          <p class="dash-sub">GigShield Operations Dashboard</p>
+        </div>
+        <button class="btn-sm" onclick="loadAdmin()">↻ Refresh</button>
+      </div>
+
+      <div class="dash-cards">
+        <div class="dash-card accent"><div class="dc-label">Total Workers</div><div class="dc-value" id="adWorkers">—</div></div>
+        <div class="dash-card"><div class="dc-label">Active Policies</div><div class="dc-value" id="adPolicies">—</div></div>
+        <div class="dash-card"><div class="dc-label">Total Payouts</div><div class="dc-value" id="adPayouts">—</div></div>
+        <div class="dash-card warn"><div class="dc-label">Fraud Flags</div><div class="dc-value" id="adFraud">—</div></div>
+      </div>
+
+      <div class="admin-grid">
+        <div class="section-block">
+          <h3>Recent Workers</h3>
+          <div id="adminWorkersList" class="admin-table-wrap"></div>
+        </div>
+        <div class="section-block">
+          <h3>Live Trigger Events</h3>
+          <div id="adminTriggersList" class="triggers-list"></div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3>Recent Payouts</h3>
+        <div id="adminPayoutsList" class="admin-table-wrap"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
